@@ -11,8 +11,7 @@ const Nav: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       <div className={styles.logo}>
-        {/* Substitua pelo seu logo */}
-        <img src="/logo.png" alt="Logo Teilor Advocacia" />
+        <img src="/src/assets/images/logo200.svg" alt="Logo Teilor Advocacia" />
       </div>
       <ul className={styles.navLinks}>
         <li><a href="#home">Home</a></li>

@@ -1,19 +1,24 @@
+@import "../../assets/styles/Variables.scss";
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: $spacing-md auto;
+  padding: $spacing-sm $spacing-xl;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 2px $shadow-color;
   position: fixed;
   top: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
+  border-radius: 50px; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba($border-color, 0.22);
 }
 
 .logo img {
@@ -21,21 +26,20 @@
 }
 
 .navLinks {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-  }
-  
+  list-style: none;
+  display: flex;
+  gap: $spacing-xl;
+  margin: 0;
+  padding: 0;
+}
 
 .navLinks li a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  color: $accent-color;
+  font-weight: $fw-medium;
   transition: color 0.3s ease;
 }
 
 .navLinks li a:hover {
-  color: #000;
+  color: darken($accent-color, 30%);
 }

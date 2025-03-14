@@ -1,0 +1,100 @@
+$primary-color: #621414;
+$secondary-color: #333333;
+$accent-color: #ffffff;
+$background-color: #f5f5f5;
+
+/* Cores adicionais */
+$text-color: $secondary-color;
+$border-color: darken($background-color, 10%);
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+/* Tipografia */
+$font-title: 'Antic Didone', sans-serif;
+$font-body: 'Raleway', sans-serif;
+$font-alt: 'Montserrat', sans-serif;
+
+/* Tamanhos de fonte */
+$fs-title-large: 2.5rem;
+$fs-title-medium: 2rem;
+$fs-title-small: 1.75rem;
+$fs-subtitle: 1.5rem;
+$fs-body: 1rem;
+$fs-button: 1rem;
+$fs-small: 0.875rem;
+$fs-caption: 0.75rem;
+
+/* Pesos de fonte */
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+/* Espaçamento */
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+/* Bordas e sombras */
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$box-shadow: 0px 4px 6px $shadow-color;
+
+/* Mixin para estilo de título com espaçamento ajustado */
+@mixin title-style {
+  font-family: $font-title;
+  word-spacing: -5px;
+  letter-spacing: -0.5px; /* Opcional: ajuste também o espaçamento entre letras */
+}
+
+/* Exemplos de uso */
+h1, h2, h3 {
+  @include title-style;
+  font-weight: $fw-bold;
+  color: $primary-color;
+}
+
+h1 {
+  font-size: $fs-title-large;
+}
+
+h2 {
+  font-size: $fs-title-medium;
+}
+
+h3 {
+  font-size: $fs-title-small;
+}
+
+/* Classe utilitária para aplicar o estilo de título em outros elementos */
+.title-font {
+  @include title-style;
+}
+
+body {
+  font-family: $font-body;
+  font-size: $fs-body;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+button {
+  font-size: $fs-button;
+  font-weight: $fw-medium;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-md;
+  box-shadow: $box-shadow;
+  background-color: $primary-color;
+  color: $accent-color;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darken($primary-color, 10%);
+}
