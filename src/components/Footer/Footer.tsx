@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import { MdFacebook, MdOutlineArrowUpward, MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
+import { MdFacebook, MdOutlineArrowUpward, MdEmail, MdLocationOn } from "react-icons/md";
 import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 const Footer: React.FC = () => {
@@ -50,12 +50,8 @@ const Footer: React.FC = () => {
               <h3 className={styles.footerColumnTitle}>Contato</h3>
               <ul className={styles.footerContactList}>
                 <li>
-                  <MdPhone size={18} />
-                  <span>(11) 3456-7890</span>
-                </li>
-                <li>
                   <FaWhatsapp size={18} />
-                  <span>(11) 98765-4321</span>
+                  <span>(41) 99556-4466</span>
                 </li>
                 <li>
                   <MdEmail size={18} />
@@ -63,7 +59,7 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <MdLocationOn size={18} />
-                  <span>Av. Paulista, 1000 - Bela Vista, São Paulo - SP</span>
+                  <span>Rua Lodovico Geronazzo, 240</span>
                 </li>
               </ul>
             </div>

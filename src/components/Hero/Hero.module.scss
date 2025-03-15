@@ -7,6 +7,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 400px) {
+  .heroContainer {
+    height: 120vh;
+  }
+}
+
 .heroBackground {
   position: absolute;
   top: 0;

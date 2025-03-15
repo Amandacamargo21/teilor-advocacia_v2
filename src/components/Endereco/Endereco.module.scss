@@ -173,7 +173,6 @@
 
 .enderecoMapa {
   flex: 1;
-  min-height: 450px;
   border-radius: 0 $border-radius-lg $border-radius-lg 0;
   overflow: hidden;
   
@@ -198,8 +197,5 @@
   .enderecoContainer {
     padding: 0 $spacing-md;
   }
-  
-  .enderecoMapa {
-    min-height: 300px;
-  }
+
 }

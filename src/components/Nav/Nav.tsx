@@ -44,9 +44,9 @@ const Nav: React.FC = () => {
       <div className={`${styles.topBar} ${scrolled ? styles.scrolled : ""}`}>
         <div className={styles.topBarContent}>
           <div className={styles.contactInfo}>
-            <a href="tel:+5511987654321" className={styles.contactLink}>
+            <a href="tel:+554195564466" className={styles.contactLink}>
               <MdCall size={16} />
-              <span>(11) 3456-7890</span>
+              <span>(41) 99556-4466</span>
             </a>
             <a href="mailto:contato@teiloradvocacia.com.br" className={styles.contactLink}>
               <MdEmail size={16} />
@@ -54,7 +54,7 @@ const Nav: React.FC = () => {
             </a>
           </div>
           <div className={styles.ctaButton}>
-            <a href="#contato">Agende uma Consulta</a>
+            <a href="#contato">Converse com nossa equipe</a>
           </div>
         </div>
       </div>

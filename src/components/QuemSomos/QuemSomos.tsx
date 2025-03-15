@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./QuemSomos.module.scss";
-import { MdAccessTimeFilled, MdSupportAgent, MdVerified, MdPersonSearch, MdWhatsapp } from "react-icons/md";
+import { MdAccessTimeFilled, MdSupportAgent, MdVerified, MdWhatsapp } from "react-icons/md";
 
 const QuemSomos: React.FC = () => {
   const whatsappMessage = encodeURIComponent(`Olá, gostaria de saber mais sobre seus serviços de assessoria jurídica.`);

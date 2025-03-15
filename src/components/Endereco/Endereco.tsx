@@ -33,9 +33,6 @@ const ContatoItem: React.FC<ContatoItemProps> = ({ icon, title, content, delay }
 };
 
 const Endereco: React.FC = () => {
-  const whatsappNumber = "5511987654321"; // Substitua pelo número real
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta`;
-
   return (
     <section id="contato" className={styles.enderecoSection}>
       <motion.div
@@ -105,17 +102,7 @@ const Endereco: React.FC = () => {
               />
             </div>
             
-            <motion.a 
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.agendarButton}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <MdWhatsapp size={20} />
-              Agendar Consulta via WhatsApp
-            </motion.a>
+            
           </motion.div>
           
           <motion.div 

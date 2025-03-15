@@ -92,6 +92,12 @@
     object-position: -160px;
   }
   
+  @media (max-width: 992px) {
+    img {
+      object-position: unset;
+    }
+  }
+
   .imageBorder {
     position: absolute;
     width: 100%;
