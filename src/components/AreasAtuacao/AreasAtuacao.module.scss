@@ -1,0 +1,137 @@
+@import "../../assets/styles/Variables.scss";
+
+.areasContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.areasHeader {
+  text-align: center;
+  margin-bottom: $spacing-xxl;
+}
+
+.areasTitle {
+  @include title-style;
+  font-size: $fs-title-medium;
+  font-weight: $fw-bold;
+  color: $secondary-color;
+  margin-bottom: $spacing-md;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -$spacing-sm;
+    width: 80px;
+    height: 3px;
+    background-color: $primary-color;
+  }
+}
+
+.areasSubtitle {
+  font-family: $font-alt;
+  font-size: $fs-body;
+  font-weight: $fw-regular;
+  color: $secondary-color;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.areasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-xl;
+  margin-top: $spacing-xl;
+}
+
+.areaCard {
+  background-color: white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+  }
+}
+
+.areaIcon {
+  margin-bottom: $spacing-md;
+  color: $primary-color;
+  background-color: rgba($primary-color, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: $spacing-md;
+}
+
+.areaTitle {
+  font-family: $font-alt;
+  font-size: $fs-subtitle;
+  font-weight: $fw-medium;
+  margin-bottom: $spacing-md;
+  color: $text-color;
+}
+
+.areaDescription {
+  font-family: $font-body;
+  font-size: $fs-body;
+  line-height: 1.6;
+  color: $text-color;
+  margin-bottom: $spacing-lg;
+  flex-grow: 1;
+}
+
+.areaButton {
+  font-family: $font-alt;
+  font-size: $fs-button;
+  font-weight: $fw-medium;
+  padding: $spacing-md $spacing-lg;
+  background-color: transparent;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  align-self: center;
+  margin-top: auto;
+  text-decoration: none; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  
+  &:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+  .areasGrid {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}

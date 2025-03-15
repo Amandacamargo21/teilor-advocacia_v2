@@ -1,0 +1,93 @@
+@import "../../assets/styles/Variables.scss";
+
+.whatsappButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #25D366;
+    opacity: 0.4;
+    animation: pulse 2s infinite;
+    z-index: -1;
+  }
+  
+  &:hover {
+    background-color: darken(#25D366, 5%);
+    
+    .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) translateX(-50%);
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateY(10px) translateX(-50%);
+  background-color: $secondary-color;
+  color: $accent-color;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: $fs-small;
+  font-family: $font-alt;
+  font-weight: $fw-medium;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: $secondary-color transparent transparent transparent;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsappButton {
+    width: 50px;
+    height: 50px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}

@@ -1,0 +1,77 @@
+@import "../../assets/styles/Variables.scss";
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  &.light {
+    background-color: $background-color;
+    color: $text-color;
+  }
+  
+  &.dark {
+    background-color: $secondary-color;
+    color: $accent-color;
+  }
+  
+  &.primary {
+    background-color: $primary-color;
+    color: $accent-color;
+  }
+}
+
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionTitle {
+  @include title-style;
+  font-size: $fs-title-medium;
+  font-weight: $fw-bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  
+  .light & {
+    color: $text-color;
+  }
+  
+  .dark &, .primary & {
+    color: $accent-color;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: $primary-color;
+    border-radius: 2px;
+    
+    .primary & {
+      background-color: $accent-color;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 2rem;
+    
+    &::after {
+      width: 60px;
+    }
+  }
+}

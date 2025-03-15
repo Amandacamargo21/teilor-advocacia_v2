@@ -48,12 +48,12 @@ $box-shadow: 0px 4px 6px $shadow-color;
 /* Mixin para estilo de título com espaçamento ajustado */
 @mixin title-style {
   font-family: $font-title;
-  word-spacing: -5px;
+  word-spacing: -3px;
   letter-spacing: -0.5px; /* Opcional: ajuste também o espaçamento entre letras */
 }
 
 /* Exemplos de uso */
-h1, h2, h3 {
+h1 {
   @include title-style;
   font-weight: $fw-bold;
   color: $primary-color;

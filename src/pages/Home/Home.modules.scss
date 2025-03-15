@@ -1,0 +1,48 @@
+@import "../assets/styles/Variables.scss";
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  &.light {
+    background-color: $background-color;
+    color: $text-color;
+  }
+  
+  &.dark {
+    background-color: $secondary-color;
+    color: $accent-color;
+
+    // Ajusta a cor do texto em seções escuras para títulos dentro das seções
+    .sectionTitle {
+      color: $accent-color;
+      
+      &::after {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.sectionTitle {
+  @include title-style;
+  font-size: $fs-title-medium;
+  font-weight: $fw-bold;
+  color: $text-color;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: $primary-color;
+    border-radius: 2px;
+  }
+}

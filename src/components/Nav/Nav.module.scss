@@ -1,45 +1,342 @@
 @import "../../assets/styles/Variables.scss";
 
-.nav {
+.topBar {
+  width: 100%;
+  background-color: $secondary-color;
+  padding: $spacing-xs 0;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  
+  &.scrolled {
+    transform: translateY(-100%);
+  }
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.topBarContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-xl;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 1200px;
-  margin: $spacing-md auto;
-  padding: $spacing-sm $spacing-xl;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 1px 2px $shadow-color;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  border-radius: 50px; 
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba($border-color, 0.22);
 }
 
-.logo img {
-  width: 120px;
+.contactInfo {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: $accent-color;
+  text-decoration: none;
+  font-family: $font-alt;
+  font-size: $fs-small;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: darken($accent-color, 10%);
+  }
+}
+
+.ctaButton {
+  a {
+    display: inline-block;
+    font-family: $font-alt;
+    font-size: $fs-small;
+    font-weight: $fw-medium;
+    color: $accent-color;
+    background-color: $primary-color;
+    padding: $spacing-xs $spacing-md;
+    border-radius: $border-radius-sm;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.nav {
+  width: 100%;
+  background-color: rgba($secondary-color, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 30px; 
+  left: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  &.scrolled {
+    top: 0;
+    background-color: rgba($secondary-color, 0.98);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    top: 0;
+  }
+}
+
+.navContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-md $spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  img {
+    height: 80px;
+    width: auto;
+    transition: all 0.3s ease;
+    
+    .scrolled & {
+      height: 60px;
+    }
+  }
 }
 
 .navLinks {
   list-style: none;
   display: flex;
-  gap: $spacing-xl;
+  gap: $spacing-lg;
   margin: 0;
   padding: 0;
+  
+  @media (max-width: 991px) {
+    display: none;
+  }
+  
+  li {
+    position: relative;
+    
+    a {
+      text-decoration: none;
+      color: $accent-color;
+      font-family: $font-alt;
+      font-weight: $fw-medium;
+      font-size: $fs-body;
+      transition: all 0.3s ease;
+      padding: $spacing-xs 0;
+      position: relative;
+      
+      &:hover {
+        color: $primary-color;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $primary-color;
+        transition: width 0.3s ease;
+      }
+      
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
 }
 
-.navLinks li a {
-  text-decoration: none;
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+  
+  @media (max-width: 991px) {
+    display: flex;
+  }
+  
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: $accent-color;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  &.active {
+    span {
+      &:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      
+      &:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 98;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 85%;
+  max-width: 350px;
+  background-color: $secondary-color;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md;
+  border-bottom: 1px solid rgba($accent-color, 0.1);
+}
+
+.mobileLogo {
+  img {
+    height: 40px;
+    width: auto;
+  }
+}
+
+.closeButton {
+  background: none;
+  border: none;
   color: $accent-color;
-  font-weight: $fw-medium;
-  transition: color 0.3s ease;
+  font-size: 28px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: $primary-color;
+  }
 }
 
-.navLinks li a:hover {
-  color: darken($accent-color, 30%);
+.mobileLinks {
+  list-style: none;
+  padding: $spacing-lg;
+  margin: 0;
+  flex: 1;
+  
+  li {
+    margin-bottom: $spacing-md;
+    
+    a {
+      display: block;
+      text-decoration: none;
+      color: $accent-color;
+      font-family: $font-alt;
+      font-size: $fs-subtitle;
+      font-weight: $fw-medium;
+      padding: $spacing-xs 0;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba($accent-color, 0.1);
+      padding-bottom: $spacing-md;
+      
+      &:hover {
+        color: $primary-color;
+        padding-left: $spacing-sm;
+      }
+    }
+  }
+}
+
+.mobileContact {
+  padding: $spacing-lg;
+  border-top: 1px solid rgba($accent-color, 0.1);
+  
+  h3 {
+    font-family: $font-alt;
+    font-size: $fs-body;
+    font-weight: $fw-semibold;
+    color: $accent-color;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.mobileContactItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $accent-color;
+  font-family: $font-body;
+  font-size: $fs-small;
+  margin-bottom: $spacing-sm;
+}
+
+.mobileCtaButton {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: $font-alt;
+  font-size: $fs-body;
+  font-weight: $fw-medium;
+  color: $accent-color;
+  background-color: $primary-color;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  text-decoration: none;
+  margin-top: $spacing-lg;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+@media (max-width: 768px) {
+  .navContent {
+    padding: $spacing-md;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileMenu {
+    width: 100%;
+    max-width: 100%;
+  }
 }
