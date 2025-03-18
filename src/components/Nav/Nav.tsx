@@ -181,7 +181,7 @@ const Nav: React.FC = () => {
               <h3>Entre em Contato</h3>
               <div className={styles.mobileContactItem}>
                 <MdCall size={18} />
-                <span>(11) 3456-7890</span>
+                <span>(41) 99556-4466</span>
               </div>
               <div className={styles.mobileContactItem}>
                 <MdEmail size={18} />
