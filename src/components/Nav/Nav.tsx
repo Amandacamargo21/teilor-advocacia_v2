@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Nav.module.scss";
 import { MdCall, MdEmail } from "react-icons/md";
+import logo200 from "@/assets/images/logo200.svg";
 
 const Nav: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,13 +30,13 @@ const Nav: React.FC = () => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
@@ -48,7 +49,10 @@ const Nav: React.FC = () => {
               <MdCall size={16} />
               <span>(41) 99556-4466</span>
             </a>
-            <a href="mailto:contato@teiloradvocacia.com.br" className={styles.contactLink}>
+            <a
+              href="mailto:contato@teiloradvocacia.com.br"
+              className={styles.contactLink}
+            >
               <MdEmail size={16} />
               <span>contato@teiloradvocacia.com.br</span>
             </a>
@@ -68,23 +72,35 @@ const Nav: React.FC = () => {
         <div className={styles.navContent}>
           <div className={styles.logo}>
             <a href="#home">
-              <img src="/src/assets/images/logo200.svg" alt="Logo Teilor Advocacia" />
+              <img src={logo200} alt="Logo Teilor Advocacia" />
             </a>
           </div>
 
           {/* Links de navegação (desktop) */}
           <ul className={styles.navLinks}>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#quem-somos">Sobre Nós</a></li>
-            <li><a href="#areas-atuacao">Áreas de Atuação</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#quem-somos">Sobre Nós</a>
+            </li>
+            <li>
+              <a href="#areas-atuacao">Áreas de Atuação</a>
+            </li>
+            <li>
+              <a href="#depoimentos">Depoimentos</a>
+            </li>
+            <li>
+              <a href="#faq">FAQ</a>
+            </li>
+            <li>
+              <a href="#contato">Contato</a>
+            </li>
           </ul>
 
           {/* Botão do menu hamburger (mobile) */}
-          <button 
-            className={`${styles.hamburger} ${isOpen ? styles.active : ""}`} 
+          <button
+            className={`${styles.hamburger} ${isOpen ? styles.active : ""}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isOpen}
@@ -99,7 +115,7 @@ const Nav: React.FC = () => {
       {/* Overlay para escurecer o fundo quando o menu mobile está aberto */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             className={styles.overlay}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -112,7 +128,7 @@ const Nav: React.FC = () => {
       {/* Menu mobile */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             className={styles.mobileMenu}
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
@@ -121,9 +137,12 @@ const Nav: React.FC = () => {
           >
             <div className={styles.mobileMenuHeader}>
               <div className={styles.mobileLogo}>
-                <img src="/src/assets/images/logo200.svg" alt="Logo Teilor Advocacia" />
+                <img
+                  src="/src/assets/images/logo200.svg"
+                  alt="Logo Teilor Advocacia"
+                />
               </div>
-              <button 
+              <button
                 className={styles.closeButton}
                 onClick={() => setIsOpen(false)}
                 aria-label="Fechar menu"
@@ -138,42 +157,54 @@ const Nav: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
               >
-                <a href="#home" onClick={handleLinkClick}>Home</a>
+                <a href="#home" onClick={handleLinkClick}>
+                  Home
+                </a>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <a href="#quem-somos" onClick={handleLinkClick}>Sobre Nós</a>
+                <a href="#quem-somos" onClick={handleLinkClick}>
+                  Sobre Nós
+                </a>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <a href="#areas-atuacao" onClick={handleLinkClick}>Áreas de Atuação</a>
+                <a href="#areas-atuacao" onClick={handleLinkClick}>
+                  Áreas de Atuação
+                </a>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <a href="#depoimentos" onClick={handleLinkClick}>Depoimentos</a>
+                <a href="#depoimentos" onClick={handleLinkClick}>
+                  Depoimentos
+                </a>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <a href="#faq" onClick={handleLinkClick}>FAQ</a>
+                <a href="#faq" onClick={handleLinkClick}>
+                  FAQ
+                </a>
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <a href="#contato" onClick={handleLinkClick}>Contato</a>
+                <a href="#contato" onClick={handleLinkClick}>
+                  Contato
+                </a>
               </motion.li>
             </ul>
 
@@ -187,7 +218,11 @@ const Nav: React.FC = () => {
                 <MdEmail size={18} />
                 <span>contato@teiloradvocacia.com.br</span>
               </div>
-              <a href="#contato" className={styles.mobileCtaButton} onClick={handleLinkClick}>
+              <a
+                href="#contato"
+                className={styles.mobileCtaButton}
+                onClick={handleLinkClick}
+              >
                 Agende uma Consulta
               </a>
             </div>
