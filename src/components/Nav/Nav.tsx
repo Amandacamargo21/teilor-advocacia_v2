@@ -223,7 +223,7 @@ const Nav: React.FC = () => {
                 className={styles.mobileCtaButton}
                 onClick={handleLinkClick}
               >
-                Agende uma Consulta
+                Agende seu atendimento
               </a>
             </div>
           </motion.div>

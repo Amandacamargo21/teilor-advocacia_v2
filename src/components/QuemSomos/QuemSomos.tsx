@@ -110,7 +110,7 @@ const QuemSomos: React.FC = () => {
                 <div className={styles.advogadoBio}>
                   <p>
                     Sócia fundadora do escritório Teilor Advocacia, Vanessa
-                    Letícia Teilor construiu sua reputação em mais de 12 anos de
+                    Letícia Teilor construiu sua reputação em mais de 14 anos de
                     atuação profissional. Especialista em Direito e Processo do
                     Trabalho, também atua nas áreas Civil, Previdenciária, do
                     Consumidor e da Pessoa com Deficiência, com participação
