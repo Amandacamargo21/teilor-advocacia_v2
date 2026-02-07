@@ -156,7 +156,7 @@ const QuemSomos: React.FC = () => {
                 <p className={styles.advogadoCargo}>Advogada</p>
                 <div className={styles.advogadoBio}>
                   <p>
-                    Bacharel em Direito com vocação para o atendimento
+                    Advogada com vocação para o atendimento
                     humanizado, Larissa Cristina Teilor atua com dedicação nas
                     áreas de Direito da Pessoa com Deficiência, Direito de
                     Família e Direito Previdenciário. Com sensibilidade e
