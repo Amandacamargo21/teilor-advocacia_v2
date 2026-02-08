@@ -10,7 +10,7 @@ interface WhatsAppButtonProps {
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   phoneNumber,
-  message = "Olá! Gostaria de agendar uma consulta."
+  message = "Olá! Gostaria de agendar uma consulta jurídica."
 }) => {
   const formattedPhone = phoneNumber.replace(/\D/g, "");
   

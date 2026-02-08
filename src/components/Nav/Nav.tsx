@@ -50,11 +50,11 @@ const Nav: React.FC = () => {
               <span>(41) 99556-4466</span>
             </a>
             <a
-              href="mailto:contato@teiloradvocacia.com.br"
+              href="mailto:contato@teiloradv.com.br"
               className={styles.contactLink}
             >
               <MdEmail size={16} />
-              <span>contato@teiloradvocacia.com.br</span>
+              <span>contato@teiloradv.com.br</span>
             </a>
           </div>
           <div className={styles.ctaButton}>
@@ -216,7 +216,7 @@ const Nav: React.FC = () => {
               </div>
               <div className={styles.mobileContactItem}>
                 <MdEmail size={18} />
-                <span>contato@teiloradvocacia.com.br</span>
+                <span>contato@teiloradv.com.br</span>
               </div>
               <a
                 href="#contato"

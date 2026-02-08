@@ -86,7 +86,7 @@ const Endereco: React.FC = () => {
               <ContatoItem 
                 icon={<MdEmail size={24} />}
                 title="E-mail"
-                content="contato@teiloradvocacia.com.br"
+                content="contato@teiloradv.com.br"
                 delay={0.4}
               />
               

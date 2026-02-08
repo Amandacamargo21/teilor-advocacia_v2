@@ -100,6 +100,10 @@ const Faq: React.FC = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const whatsappMessage = encodeURIComponent(`Olá, gostaria de saber mais sobre seus serviços de assessoria jurídica.`);
+  const whatsappUrl = `https://wa.me/554195564466?text=${whatsappMessage}`;
+
+
   return (
     <div className={styles.faqContainer}>
       <div className={styles.faqHeader}>
@@ -125,7 +129,7 @@ const Faq: React.FC = () => {
       <div className={styles.faqFooter}>
         <p>Não encontrou sua dúvida aqui?</p>
         <motion.a
-          href="https://wa.me/554195564466?text=Olá,%20tenho%20uma%20dúvida%20que%20não%20encontrei%20no%20FAQ."
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.faqButton}

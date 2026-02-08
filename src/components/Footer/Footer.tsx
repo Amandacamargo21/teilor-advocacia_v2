@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import { MdFacebook, MdOutlineArrowUpward, MdEmail, MdLocationOn } from "react-icons/md";
 import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import logo200 from "@/assets/images/logo200.svg";
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -11,12 +12,16 @@ const Footer: React.FC = () => {
     });
   };
 
+  const whatsappMessage = encodeURIComponent(`Olá, gostaria de saber mais sobre seus serviços de assessoria jurídica.`);
+  const whatsappUrl = `https://wa.me/554195564466?text=${whatsappMessage}`;
+
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerTop}>
           <div className={styles.footerLogo}>
-            <img src="/src/assets/images/logo200.svg" alt="Logo Teilor Advocacia" />
+            <img src={logo200} alt="Logo Teilor Advocacia" />
             <p className={styles.footerTagline}>
               Excelência jurídica com resultados efetivos
             </p>
@@ -55,7 +60,7 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <MdEmail size={18} />
-                  <span>contato@teiloradvocacia.com.br</span>
+                  <span>contato@teiloradv.com.br</span>
                 </li>
                 <li>
                   <MdLocationOn size={18} />
@@ -71,13 +76,13 @@ const Footer: React.FC = () => {
             <a href="https://www.facebook.com/profile.php?id=100064185278911" aria-label="Facebook" className={styles.socialIcon} target="_blank" rel="noopener noreferrer">
               <MdFacebook size={24} />
             </a>
-            <a href="https://www.instagram.com/teiloradvocacia/" aria-label="Instagram" className={styles.socialIcon} target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/teiloradv/" aria-label="Instagram" className={styles.socialIcon} target="_blank" rel="noopener noreferrer">
               <FaInstagram size={24} />
             </a>
             <a href="https://www.linkedin.com/in/vanessa-let%C3%ADcia-teilor-3b521145" aria-label="LinkedIn" className={styles.socialIcon} target="_blank" rel="noopener noreferrer">
               <FaLinkedinIn size={24} />
             </a>
-            <a href="https://wa.me/5511987654321" aria-label="WhatsApp" className={styles.socialIcon} target="_blank" rel="noopener noreferrer">
+            <a href={whatsappUrl} aria-label="WhatsApp" className={styles.socialIcon} target="_blank" rel="noopener noreferrer">
               <FaWhatsapp size={24} />
             </a>
           </div>
